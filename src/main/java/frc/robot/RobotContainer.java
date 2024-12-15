@@ -5,15 +5,10 @@
 
 package frc.robot;
 
-
-import frc.robot.oi.OI;
-
 @SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class RobotContainer {
-  public static OI oi;
 
   public RobotContainer() {
-    oi = new OI();
     configureBindings();
   }
 
