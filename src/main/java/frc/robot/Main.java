@@ -6,9 +6,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.RobotBase;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 /**
  * Do NOT add any static variables to this class, or any initialization at all. Unless you know what
