@@ -12,13 +12,7 @@ public class RobotContainer {
     configureBindings();
   }
 
-  private void nameCommands() {
+  private void nameCommands() {}
 
-  }
-
-  private void configureBindings() {
-
-  }
-
-
+  private void configureBindings() {}
 }
