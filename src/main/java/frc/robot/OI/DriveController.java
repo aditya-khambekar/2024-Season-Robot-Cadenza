@@ -12,6 +12,7 @@ public class DriveController {
   static Trigger ClimberRight = oi.Buttons.DPAD_RIGHT;
   static Trigger Intake = oi.Buttons.Y_BUTTON;
   static Trigger Outtake = oi.Buttons.X_BUTTON;
+  public static Trigger Aimer = oi.Buttons.LEFT_TRIGGER;
   public static DoubleSupplier ForwardAxis = oi.Axis::getLeftStickX;
   public static DoubleSupplier StrafeAxis = oi.Axis::getLeftStickY;
   public static DoubleSupplier RotationAxis = oi.Axis::getRightStickX;

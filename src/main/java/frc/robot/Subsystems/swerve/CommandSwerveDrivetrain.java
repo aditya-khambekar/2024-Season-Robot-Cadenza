@@ -7,21 +7,16 @@ import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.wpilibj.Timer;
+import frc.robot.Constants.FieldConstants;
 import frc.robot.helper.Limelight.LimelightHelpers;
 import java.util.Arrays;
 
 public class CommandSwerveDrivetrain extends SwerveDrivetrain {
     public SwerveDriveKinematics m_kinematics;
-    double baseRadius;
-
+    
     public CommandSwerveDrivetrain(SwerveDrivetrainConstants driveTrainConstants, SwerveModuleConstants... modules) {
         super(driveTrainConstants, modules);
-        seedFieldRelative(new Pose2d());
-
-        this.baseRadius =
-                Arrays.stream(modules)
-                        .map(module -> Math.hypot(module.LocationX, module.LocationY))
-                        .reduce(0.0, Double::max);
+        seedFieldRelative(FieldConstants.kLeftBlueSpeakerPose.toPose2d());
     }
 
     public void update() {

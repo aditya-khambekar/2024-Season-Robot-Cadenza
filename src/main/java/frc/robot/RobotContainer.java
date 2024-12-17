@@ -5,8 +5,15 @@
 
 package frc.robot;
 
+import frc.robot.Subsystems.swerve.SwerveDriveSubsystem;
+import frc.robot.Subsystems.swerve.TunerConstants;
+
+import static frc.robot.OI.DriveController.Aimer;
+
 @SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class RobotContainer {
+
+  SwerveDriveSubsystem driveSubsystem = TunerConstants.DriveTrain;
 
   public RobotContainer() {
     configureBindings();
@@ -14,5 +21,8 @@ public class RobotContainer {
 
   private void nameCommands() {}
 
-  private void configureBindings() {}
+  private void configureBindings() {
+    driveSubsystem.setDefaultCommand(driveSubsystem.fieldCentricDrive());
+    Aimer.whileTrue(driveSubsystem.fieldCentricDrive());
+  }
 }
