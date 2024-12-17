@@ -22,8 +22,6 @@ public class SwerveDriveSubsystem extends SubsystemBase{
 
     public void periodic(){
         drivetrain.update();
-        SwerveDriveKinematics m_kinematics = drivetrain.m_kinematics;
-        ChassisSpeeds m_chassisSpeeds = m_kinematics.toChassisSpeeds();
     }
 
     public Command fieldCentricDrive(){
@@ -34,6 +32,19 @@ public class SwerveDriveSubsystem extends SubsystemBase{
                                 .withVelocityY(DriveController.ForwardAxis.getAsDouble())
                                 .withRotationalRate(DriveController.RotationAxis.getAsDouble())
                 )
+        );
+    }
+
+    public Command speakerTargetedDrive(){
+        return run( () ->
+                drivetrain.setControl(
+                        new SwerveRequest.FieldCentricFacingAngle()
+                                .withVelocityX(DriveController.StrafeAxis.getAsDouble())
+                                .withVelocityY(DriveController.ForwardAxis.getAsDouble())
+                                //.withTargetDirection()
+                )
+
+
         );
     }
 
